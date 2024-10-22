@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Starbucks Website Landing Page</title>
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <header>
+        <a href="#" class="logo"><img id="starbucks-logo" src="/static/images/logo.png" alt="Starbucks Logo" /></a>
+        <ul>
+          <li><a href="{{ url_for('home') }}" class="menu-btn">Home</a></li>
+          <li><a href="{{ url_for('menu') }}" class="menu-btn">Menu</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>It's not just Coffee <br />It's <span id="starbucks-text">Starbucks</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+            aspernatur ipsam molestias optio odio rem quidem provident delectus
+            quas consequuntur aut dolore, voluptatum repellendus porro illo,
+            velit, explicabo maxime debitis.
+          </p>
+          <a id="learn-more-btn" href="#">Learn more</a>
+        </div>
+        <div class="imgBox">
+          <img src="/static/images/img1.png" class="starbucks" alt="Starbucks Coffee" />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li>
+          <img
+            src="/static/images/thumb1.png"
+            onclick="imgSlider('/static/images/img1.png'); changeCircleColor('#017143'); changeTextColor('#017143'); changeButtonColor('#017143'); changeLogoColor('#017143');"
+            alt="Thumbnail 1"
+          />
+        </li>
+        <li>
+          <img
+            src="/static/images/thumb2.png"
+            onclick="imgSlider('/static/images/img2.png'); changeCircleColor('#eb7495'); changeTextColor('#eb7495'); changeButtonColor('#eb7495'); changeLogoColor('#eb7495');"
+            alt="Thumbnail 2"
+          />
+        </li>
+        <li>
+          <img
+            src="/static/images/thumb3.png"
+            onclick="imgSlider('/static/images/img3.png'); changeCircleColor('#d752b1'); changeTextColor('#d752b1'); changeButtonColor('#d752b1'); changeLogoColor('#d752b1');"
+            alt="Thumbnail 3"
+          />
+        </li>
+      </ul>
+      <ul class="sci">
+        <li>
+          <a href="#"><img src="/static/images/facebook.png" alt="Facebook" /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/Tarunrathod_19?t=I5dAHzPbBHw-aefuZdtOfw&s=08"><img src="/static/images/twitter.png" alt="Twitter" /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/_.tarunnn.rathoddd._"><img src="/static/images/instagram.png" alt="Instagram" /></a>
+        </li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".starbucks").src = anything;
+      }
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        circle.style.background = color;
+      }
+      function changeTextColor(color) {
+        const textSpan = document.getElementById("starbucks-text");
+        textSpan.style.color = color;
+      }
+      function changeButtonColor(color) {
+        const button = document.getElementById("learn-more-btn");
+        button.style.background = color;
+        button.style.borderColor = color;
+      }
+      function changeLogoColor(color) {
+        const logo = document.getElementById("starbucks-logo");
+        logo.style.filter = `invert(${color === '#017143' ? 1 : 0}) sepia(1) saturate(10000%) hue-rotate(${color === '#017143' ? 130 : color === '#eb7495' ? -40 : 290}deg)`;
+      }
+    </script>
+  </body>
+</html>
