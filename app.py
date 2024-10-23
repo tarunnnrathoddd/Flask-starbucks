@@ -21,16 +21,19 @@ def connect_to_db():
 
 # Route for landing page
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+# Route for home page
+@app.route('/home')
 def home():
     return render_template('home.html')
 
+# Route for menu page
 @app.route('/menu')
 def menu():
     return render_template('menu.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
 # Route for contact page
 @app.route('/contact')
 def contact():
